@@ -40,3 +40,10 @@ Trail bytes must be in 0x40-0x7E or 0xA1-0xFE. A structurally valid lead
 byte followed by an invalid trail byte raises in strict mode; in replace
 mode the lead byte becomes U+FFFD and the bad trail byte is re-examined on
 the next iteration, which usually resyncs cleanly.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
