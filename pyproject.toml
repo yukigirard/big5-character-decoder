@@ -1,6 +1,6 @@
 [project]
 name = "big5-character-decoder"
-version = "0.1.0"
+version = "0.1.1"
 description = "Decodes and encodes Traditional Chinese text using the Big5 character encoding standard."
 requires-python = ">=3.10"
 dependencies = []
